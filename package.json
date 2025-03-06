@@ -1,0 +1,29 @@
+{
+  "name": "create-tateru-app",
+  "description": "Create basic Tateru CLI website",
+  "version": "0.1.0",
+  "bin": {
+    "create-tateru-app": "./lib/index.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tateru",
+    "tateru-cli",
+    "static-site-generator",
+    "static-site"
+  ],
+  "author": {
+    "name": "Daniel Sitek",
+    "email": "dan.sitek@gmail.com",
+    "url": "https://danielsitek.cz"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  }
+}
