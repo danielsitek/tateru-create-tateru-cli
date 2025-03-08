@@ -6,19 +6,22 @@
     "create-tateru-cli": "./lib/index.js"
   },
   "files": [
-    "lib"
+    "lib",
+    "templates",
+    "README.md"
   ],
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf lib",
+    "typecheck": "tsc --noEmit",
     "prepack": "npm run clean && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "tateru",
     "tateru-cli",
     "static-site-generator",
-    "static-site"
+    "static-site",
+    "create-tateru-cli"
   ],
   "author": {
     "name": "Daniel Sitek",

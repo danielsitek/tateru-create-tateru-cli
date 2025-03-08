@@ -6,7 +6,7 @@ interface CommandsOptions {
     directory: string;
 }
 
-const DEFAULT_TEMPLATE_NAME = 'default';
+const DEFAULT_TEMPLATE_NAME = 'gulp-vanilla';
 const DEFAULT_DIRECTORY = '.';
 
 const HELP_MESSAGE = `
@@ -21,7 +21,7 @@ Options:
   -v, --version             Display Tateru CLI version.
 
 Available templates:
-  default                   Default template with basic setup.
+  gulp-vanilla              Basic template with gulp workflow.
 `;
 
 /**
