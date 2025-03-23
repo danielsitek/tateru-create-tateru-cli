@@ -7,7 +7,7 @@ interface CommandsOptions {
 }
 
 const DEFAULT_TEMPLATE_NAME = 'gulp-vanilla';
-const DEFAULT_DIRECTORY = '.';
+const DEFAULT_DIRECTORY = 'tateru-cli-starter';
 
 const HELP_MESSAGE = `
 Create a new Tateru CLI project with ease.
@@ -18,7 +18,7 @@ Usage:
 Options:
   -t, --template NAME       Set build environment (dev or prod). Default is dev.
   -h, --help                Display help and usage details.
-  -v, --version             Display Tateru CLI version.
+  -V, --version             Display Tateru CLI version.
 
 Available templates:
   gulp-vanilla              Basic template with gulp workflow.
