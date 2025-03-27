@@ -1,7 +1,7 @@
 {
   "name": "create-tateru-cli",
   "description": "Create basic Tateru CLI project from template files",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "bin": {
     "create-tateru-cli": "./lib/index.js"
   },
@@ -34,5 +34,13 @@
   "devDependencies": {
     "@types/node": "20.11",
     "typescript": "^5.8.2"
+  },
+  "homepage": "https://github.com/danielsitek/tateru-create-tateru-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielsitek/tateru-create-tateru-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielsitek/tateru-create-tateru-cli/issues"
   }
 }
