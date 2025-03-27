@@ -1,0 +1,111 @@
+{
+  "env": {
+    "dev": {
+      "data": {
+        "app": {
+          "environment": "dev"
+        }
+      }
+    },
+    "prod": {
+      "data": {
+        "app": {
+          "environment": "prod"
+        }
+      }
+    }
+  },
+  "options": {
+    "data": {
+      "app": {
+        "environment": "dev",
+        "root": "/"
+      },
+      "title": "Tateru CLI Starter",
+      "shortTitle": "Tateru CLI Starter",
+      "description": "Tateru CLI is simple static site generator using Twig templates for generating html or other files.",
+      "keywords": [
+        "Tateru CLI",
+        "Static Site Generator",
+        "Twig JS",
+        "cli"
+      ],
+      "owner": "Tateru CLI",
+      "domain": "https://example.com/",
+      "images": [
+        "assets/images/share/homepage.png"
+      ],
+      "sitename": "Tateru CLI - Website Starter",
+      "langCode": "cs_CZ",
+      "type": "place",
+      "facebook": {
+        "appID": "",
+        "admins": "",
+        "image": ""
+      },
+      "google": {
+        "author": "",
+        "publisher": "",
+        "image": ""
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "",
+        "siteID": "",
+        "creator": "",
+        "creatorID": "",
+        "domain": "https://example.com/",
+        "image": ""
+      },
+      "full_locale": "cs_CZ"
+    },
+    "src": "src/twig",
+    "ext": "dist"
+  },
+  "translations": {
+    "cs": {
+      "src": "src/translations/cs.json",
+      "ext": ""
+    }
+  },
+  "pages": {
+    "cs": {
+      "index": {
+        "data": {
+          "page": "index"
+        },
+        "src": "views/homepage.html.twig",
+        "ext": "index.html",
+        "minify": ["prod"]
+      },
+      "humans_txt": {
+        "data": {
+          "page": "humans_txt"
+        },
+        "src": "views/humans.txt.twig",
+        "ext": "humans.txt"
+      },
+      "robots_txt": {
+        "data": {
+          "page": "robots_txt"
+        },
+        "src": "views/robots.txt.twig",
+        "ext": "robots.txt"
+      },
+      "sitemap_xml": {
+        "data": {
+          "page": "sitemap_xml"
+        },
+        "src": "views/sitemap.html.twig",
+        "ext": "sitemap.xml"
+      },
+      "webmanifest_file": {
+        "data": {
+          "page": "webmanifest_file"
+        },
+        "src": "views/site.webmanifest.twig",
+        "ext": "site.webmanifest"
+      }
+    }
+  }
+}

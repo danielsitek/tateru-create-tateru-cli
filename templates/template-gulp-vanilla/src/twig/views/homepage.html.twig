@@ -1,0 +1,21 @@
+{% extends "Main::layouts/layout.html.twig" %}
+
+{% block body %}
+    <div>
+        <h1>{{- title -}}</h1>
+        <h2>{{- app.environment }} / {{ trans('homepage.title') }}</h2>
+    </div>
+{% endblock %}
+
+
+{% block footer %}
+    <footer class="page-footer text-right">
+        <div>Created by Tateru-CLI</div>
+    </footer>
+    {{ parent() }}
+{% endblock %}
+
+
+{%- block javascripts -%}
+    <script src="{{- app.root -}}assets/js/homepage.bundle.js{{- version_suffix -}}"></script>
+{%- endblock -%}

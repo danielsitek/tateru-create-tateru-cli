@@ -1,0 +1,150 @@
+{%- set versionID = "now"|date("mdYHms") -%}
+{%- set version_suffix = '?v=' ~ versionID -%}
+
+{%- set isHomepage = false -%}
+{%- if page == 'index' -%}
+    {%- set isHomepage = true -%}
+{%- endif -%}
+
+{%- set domainHref = '' -%}
+{%- if not isHomepage -%}
+    {%- set domainHref = href[page][1:] -%}
+{%- endif -%}
+
+<!DOCTYPE html>
+<html class="no-js" lang="{{- lang -}}" itemscope itemtype="http://schema.org/WebPage">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>{{- title -}}</title>
+    <meta name="description" content="{{- description -}}">
+    {%- if keywords is not empty -%}
+    <meta name="keywords" content="{{- keywords|join(', ') -}}">
+    {%- endif -%}
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="{{- owner -}}">
+    <link type="text/plain" rel="author" href="{{- domain -}}humans.txt" />
+    <meta name="creator" content="Daniel Sitek, me/at/danielsitek/dot/cz">
+    <link rel="canonical" href="{{- domain ~ domainHref -}}" />
+
+    {###############################################}
+    {# Open Graph data #}
+    {%- if type is not empty -%}
+    <meta property="og:type" content="{{- type -}}" />
+    {%- endif -%}
+    {%- if title is not empty -%}
+    <meta property="og:title" content="{{- title -}}" />
+    {%- endif -%}
+    {%- if domain is defined and not empty -%}
+    <meta property="og:url" content="{{- domain ~ domainHref -}}" />
+    {%- endif -%}
+    <meta property="og:locale" content="{{- langCode -}}" />
+    {%- if description is not empty -%}
+    <meta property="og:description" content="{{- description -}}" />
+    {%- endif -%}
+    {%- if images is not empty -%}
+    {%- for image in images -%}
+    <meta property="og:image" content="{{- domain ~ image -}}" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    {%- endfor -%}
+    {%- endif -%}
+    {%- if sitename is not empty -%}
+    <meta property="og:site_name" content="{{- sitename -}}" />
+    {%- endif -%}
+    {%- if facebook.appID is not empty -%}
+    <meta property="fb:app_id" content="{{- facebook.appID -}}" />
+    {%- endif -%}
+    {%- if facebook.admins is not empty -%}
+    <meta property="fb:admins" content="{{- facebook.admins -}}" />
+    {%- endif -%}
+
+    {###############################################}
+    {# Twitter Card data #}
+    {%- if twitter.card is not empty -%}
+    <meta name="twitter:card" content="{{- twitter.card -}}">
+    {%- endif -%}
+    {%- if domain is defined and not empty -%}
+    <meta name="twitter:domain" content="{{- domain -}}">
+    {%- endif -%}
+    {%- if twitter.site is not empty -%}
+    <meta name="twitter:site" content="{{- twitter.site -}}">
+    {%- endif -%}
+    {%- if twitter.siteID is not empty -%}
+    <meta name="twitter:site:id" content="{{- twitter.siteID -}}">
+    {%- endif -%}
+    {%- if title is not empty -%}
+    <meta name="twitter:title" content="{{- title -}}">
+    {%- endif -%}
+    {%- if description is not empty -%}
+    <meta name="twitter:description" content="{{- description -}}">
+    {%- endif -%}
+    {%- if twitter.creator is not empty -%}
+    <meta name="twitter:creator" content="{{- twitter.creator -}}">
+    {%- endif -%}
+    {%- if twitter.creatorID is not empty -%}
+    <meta name="twitter:creator:id" content="{{- twitter.creatorID -}}">
+    {%- endif -%}
+    {%- if twitter.image is not empty -%}
+    <meta name="twitter:image:src" content="{{- domain ~ twitter.image -}}">
+    <meta name="twitter:image:width" content="1240">
+    <meta name="twitter:image:height" content="700">
+    {%- elseif images is not empty -%}
+    <meta name="twitter:image:src" content="{{- domain ~ images[0] -}}">
+    <meta name="twitter:image:width" content="1240">
+    <meta name="twitter:image:height" content="700">
+    {%- endif -%}
+
+    {###############################################}
+    {# Google Authorship and Publisher Markup #}
+    {%- if google.author is not empty -%}
+    <link rel="author" href="{{- google.author -}}"/>
+    {%- endif -%}
+    {%- if google.publisher is not empty -%}
+    <link rel="publisher" href="{{- google.publisher -}}"/>
+    {%- endif -%}
+
+    {###############################################}
+    {# Schema.org markup for Google+ #}
+    {%- if title is not empty -%}
+    <meta itemprop="name" content="{{- title -}}">
+    {%- endif -%}
+    {%- if description is not empty -%}
+    <meta itemprop="description" content="{{- description -}}">
+    {%- endif -%}
+    {%- if images is not empty -%}
+    <meta itemprop="image" content="{{- domain ~ images[0] -}}">
+    {%- endif -%}
+    {###############################################}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{- app.root -}}assets/favicon/apple-touch-icon.png{{- version_suffix -}}">
+    <link rel="icon" type="image/png" href="{{- app.root -}}assets/favicon/favicon-32x32.png{{- version_suffix -}}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{- app.root -}}assets/favicon/favicon-16x16.png{{- version_suffix -}}" sizes="16x16">
+    <link rel="shortcut icon" href="{{- app.root -}}assets/favicon/favicon.ico{{- version_suffix -}}">
+    <link rel="manifest" href="{{- app.root -}}site.webmanifest{{- version_suffix -}}" crossorigin="use-credentials">
+    <meta name="theme-color" content="#ffffff">
+
+    {%- if app.environment is defined and app.environment == 'dev' -%}
+    <link rel="stylesheet" href="{{- app.root -}}assets/css/main.css{{- version_suffix -}}">
+    {%- else -%}
+    <link rel="stylesheet" href="{{- app.root -}}assets/css/main.min.css{{- version_suffix -}}">
+    {%- endif -%}
+</head>
+<body data-feedly-mini="no">
+    {%- if app.environment is defined and app.environment == 'prod' -%}
+    {%- include "Main::include/google-tag-manager.html.twig" ignore missing -%}
+    {%- endif -%}
+
+    {%- block body -%}{%- endblock -%}
+
+    {%- block footer -%}
+    {%- include "Main::sections/section-footer.html.twig" ignore missing -%}
+    {%- endblock -%}
+
+    {%- block javascripts -%}{%- endblock -%}
+</body>
+</html>

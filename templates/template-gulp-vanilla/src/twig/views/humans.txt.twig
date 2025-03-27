@@ -1,0 +1,21 @@
+/* TEAM */
+
+    Front-End Dev: Daniel Sitek
+    Twitter: @DanielSitek
+    Location: Ceske Budejovice, Czech Republic
+
+/* SITE */
+
+    Site Name: {{ title }}
+    Site URL: {{ domain }} {{- '\n' -}}
+    {{- '    ' -}} Language: Czech {{- '\n' -}}
+    {%- if twitter.site -%}
+    {{- '    ' -}} Twitter: {{- ' ' ~ twitter.site ~ '\n' -}}
+    {%- endif %}
+
+    {{- '\n' -}}
+
+    {{- '    ' -}} Last Update: {{- ' ' ~ ""|date("Y/m/d") }}
+    Standards: HTML5, CSS3, Responsive
+    Components: VueJS, SCSS
+    Tools: Tateru, VSCode, Adobe Photoshop CC
