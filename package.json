@@ -1,7 +1,7 @@
 {
   "name": "create-tateru-cli",
   "description": "Create basic Tateru CLI project from template files",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "bin": {
     "create-tateru-cli": "./lib/index.js"
   },
