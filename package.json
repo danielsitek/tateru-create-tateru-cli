@@ -1,6 +1,6 @@
 {
   "name": "create-tateru-cli",
-  "description": "Create basic Tateru CLI project",
+  "description": "Create basic Tateru CLI project from template files",
   "version": "0.1.0",
   "bin": {
     "create-tateru-cli": "./lib/index.js"
@@ -14,8 +14,7 @@
     "build": "tsc",
     "clean": "rm -rf lib",
     "typecheck": "tsc --noEmit",
-    "prepack": "npm run clean && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepack": "npm run clean && npm run build"
   },
   "keywords": [
     "tateru-cli",
