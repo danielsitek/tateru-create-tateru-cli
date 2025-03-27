@@ -80,7 +80,7 @@ export function commands(basePath: string): Promise<CommandsOptions | null> {
                     if (arg.startsWith('-')) {
                         console.error(`Error: Unknown option "${arg}"\n`);
                         console.log(
-                            `Run "npx create-tateru-cli --help" to see available options.\n`,
+                            `Run "npm create tateru-cli@latest -- --help" to see available options.\n`,
                         );
 
                         reject();
