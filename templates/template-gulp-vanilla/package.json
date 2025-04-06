@@ -1,25 +1,16 @@
 {
   "name": "tateru-cli-gulp-vanilla",
   "version": "0.0.0",
-  "description": "Tateru CLI Website Starter",
+  "description": "Tateru CLI Website Template",
   "scripts": {
     "lint": "eslint . --ext .js --fix",
     "tateru": "tateru-cli tateru.config.json",
     "build": "gulp build",
     "build:prod": "gulp prod",
-    "watch": "gulp",
+    "dev": "gulp",
     "clean:dist": "gulp clean"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:danielsitek/tateru-starter.git"
-  },
-  "author": "Daniel Sitek <dan.sitek@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/danielsitek/tateru-starter/issues"
-  },
-  "homepage": "https://github.com/danielsitek/tateru-starter#readme",
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
