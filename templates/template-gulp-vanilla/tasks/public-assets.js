@@ -6,6 +6,7 @@ module.exports = function publicAssets(cb) {
     `**/*`,
   ], {
     cwd: 'public/',
+    encoding: false,
   })
     .pipe(dest(`${DIST_FOLDER}`));
 }
