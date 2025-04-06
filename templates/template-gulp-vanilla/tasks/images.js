@@ -7,6 +7,7 @@ module.exports = function images(cb) {
   ],
   {
     cwd: 'src/assets/images/',
+    encoding: false,
   })
     .pipe(dest(`${DIST_FOLDER}assets/images/`))
 }

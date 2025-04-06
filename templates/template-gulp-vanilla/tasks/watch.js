@@ -18,7 +18,7 @@ module.exports = function watch () {
   });
 
   watchGulp([
-    `src/assets/scss/**/*.scss`,
+    `src/assets/css/**/*.css`,
   ], css);
 
   watchGulp([
