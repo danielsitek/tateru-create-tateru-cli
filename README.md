@@ -1,5 +1,8 @@
 # Create Tateru CLI project
 
+[![NPM Version](https://img.shields.io/npm/v/create-tateru-cli)](https://www.npmjs.com/package/create-tateru-cli)
+[![GitHub Release](https://img.shields.io/github/v/release/danielsitek/tateru-create-tateru-cli)](https://github.com/danielsitek/tateru-create-tateru-cli/releases)
+
 Simplest way to create a new project using [tateru-cli](https://github.com/danielsitek/tateru-cli).
 
 ## Usage
