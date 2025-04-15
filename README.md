@@ -2,6 +2,7 @@
 
 [![NPM Version](https://img.shields.io/npm/v/create-tateru-cli)](https://www.npmjs.com/package/create-tateru-cli)
 [![GitHub Release](https://img.shields.io/github/v/release/danielsitek/tateru-create-tateru-cli)](https://github.com/danielsitek/tateru-create-tateru-cli/releases)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5b3efe68fa4d4b69b2bd00c9436954cb)](https://app.codacy.com/gh/danielsitek/tateru-create-tateru-cli/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 Simplest way to create a new project using [tateru-cli](https://github.com/danielsitek/tateru-cli).
 
