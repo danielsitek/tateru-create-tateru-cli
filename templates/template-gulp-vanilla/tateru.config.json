@@ -60,7 +60,7 @@
       "full_locale": "cs_CZ"
     },
     "src": "src/twig",
-    "ext": "dist"
+    "ext": ""
   },
   "translations": {
     "cs": {
@@ -76,7 +76,9 @@
         },
         "src": "views/homepage.html.twig",
         "ext": "index.html",
-        "minify": ["prod"]
+        "minify": [
+          "prod"
+        ]
       },
       "humans_txt": {
         "data": {
