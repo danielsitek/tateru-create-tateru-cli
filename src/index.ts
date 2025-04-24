@@ -71,7 +71,7 @@ Done. Template successfully copied. Now run:
 
 cd ${directory}
 npm install
-npm start
+npm run dev
 `;
 };
 
