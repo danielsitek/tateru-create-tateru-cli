@@ -1,25 +1,22 @@
-const { exec } = require('child_process');
-const Logger = require('./helpers/logger');
+const { src, dest } = require('gulp');
+const { gulpTateruCli } = require('gulp-tateru-cli');
+const { ENV_PRODUCTION } = require('./helpers/config');
 
-const log = new Logger({
-  namespace: 'tateru',
-});
+const TATERU_ENV_PRODUCTION = 'prod';
+const TATERU_ENV_DEVELOPMENT = 'dev';
 
-module.exports = function tateru(cb) {
-  return new Promise((resolve) => {
-    exec('npm run tateru', function (error, stdout, stderr) {
-      
-      if (error && stdout) {
-        log.error(stdout);
-      } else if (stdout) {
-        log.info(stdout);
-      }
-      
-      if (stderr) {
-        log.error(stderr);
-      }
+/** @type {import('gulp-tateru-cli').GulpTateruCliOptions} */
+const options = {
+  env:
+    process.env.NODE_ENV === ENV_PRODUCTION
+      ? TATERU_ENV_PRODUCTION
+      : TATERU_ENV_DEVELOPMENT,
+};
 
-      resolve(cb);
-    })
+module.exports = function tateru() {
+  return src(['tateru.config.json'], {
+    cwd: '.',
   })
-}
+    .pipe(gulpTateruCli(options))
+    .pipe(dest('dist'));
+};
