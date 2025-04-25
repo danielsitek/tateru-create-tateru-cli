@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 
 import path from 'node:path';
-import { cp, mkdir, readdir } from 'node:fs/promises';
+import { mkdir, readdir, stat, copyFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
-import { commands } from './cli/cli';
 import readline from 'node:readline/promises';
+import { commands } from './cli/cli';
+
+const renameFiles: Record<string, string | undefined> = {
+    _gitignore: '.gitignore',
+};
 
 const getTemplatePath = (template: string) => {
     return path.resolve(__dirname, '..', 'templates', `template-${template}`);
@@ -46,9 +50,26 @@ const ensureDirectoryEmpty = async (directory: string) => {
     }
 };
 
+const copyTemplateFiltered = async (src: string, dest: string) => {
+    const stats = await stat(src);
+
+    if (stats.isDirectory()) {
+        await mkdir(dest, { recursive: true });
+        const entries = await readdir(src);
+
+        for (const entry of entries) {
+            const srcPath = path.join(src, entry);
+            const destPath = path.join(dest, renameFiles[entry] || entry);
+            await copyTemplateFiltered(srcPath, destPath);
+        }
+    } else {
+        await copyFile(src, dest);
+    }
+};
+
 const copyTemplate = async (templatePath: string, destinationPath: string) => {
     try {
-        await cp(templatePath, destinationPath, { recursive: true });
+        await copyTemplateFiltered(templatePath, destinationPath);
     } catch (error) {
         throw new Error(
             [

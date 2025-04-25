@@ -32,3 +32,4 @@ Currently supported templates include:
 
 -   If the destination directory is not empty, the script will exit with an error.
 -   Ensure the template name is valid; otherwise, the script will notify you.
+-   Templates should use `_gitignore` instead of `.gitignore`. The script will automatically rename `_gitignore` to `.gitignore` during the copy process.
