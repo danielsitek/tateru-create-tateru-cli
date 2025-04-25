@@ -13,8 +13,9 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf lib",
+    "clean:templates": "rm -rf templates/**/node_modules && rm -rf templates/**/dist",
     "typecheck": "tsc --noEmit",
-    "prepack": "npm run clean && npm run build"
+    "prepack": "npm run clean && npm run clean:templates && npm run build"
   },
   "keywords": [
     "tateru-cli",
