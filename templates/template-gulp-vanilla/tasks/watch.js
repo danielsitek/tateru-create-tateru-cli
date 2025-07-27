@@ -32,7 +32,7 @@ module.exports = function watch () {
   watchGulp([
     `src/twig/**/*`,
     `src/translations/**/*`,
-    `config.json`,
+    `tateru.config.json`,
   ], tateru);
 
   watchGulp([
