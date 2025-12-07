@@ -30,11 +30,11 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=14"
+    "node": ">=20"
   },
   "devDependencies": {
-    "@types/node": "20.11",
-    "typescript": "^5.8.2"
+    "@types/node": "24.10.1",
+    "typescript": "5.9.3"
   },
   "homepage": "https://github.com/danielsitek/tateru-create-tateru-cli#readme",
   "repository": {
